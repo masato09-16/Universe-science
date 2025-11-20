@@ -1,4 +1,4 @@
-# Data Science Galaxy
+# Universe-science
 
 An interactive knowledge navigation app that visualizes Data Science topics as a galaxy of interconnected nodes.
 
@@ -64,4 +64,3 @@ Each node contains:
 ## License
 
 MIT
-
