@@ -344,8 +344,8 @@ export default function DataScienceGalaxy({
     // Only include links where both source and target are in filteredNodes (no Tier 1)
     const filteredLinks: any[] = [];
     links.forEach(link => {
-      const sourceId = typeof link.source === 'string' ? link.source : link.source.id;
-      const targetId = typeof link.target === 'string' ? link.target : link.target.id;
+      const sourceId = typeof link.source === 'string' ? link.source : (link.source as any).id;
+      const targetId = typeof link.target === 'string' ? link.target : (link.target as any).id;
       
       // Check if both nodes are in filteredNodes (exclude Tier 1)
       const sourceNode = filteredNodes.find(n => n.id === sourceId);
