@@ -9,6 +9,13 @@ if (!process.env.NEXTAUTH_SECRET) {
   console.warn('Warning: NEXTAUTH_SECRET is not set. Please generate a secret key.');
 }
 
+// デバッグ用: 環境変数をログ出力（本番環境では削除推奨）
+if (process.env.NODE_ENV === 'development' || process.env.VERCEL) {
+  console.log('NEXTAUTH_URL:', process.env.NEXTAUTH_URL);
+  console.log('GOOGLE_CLIENT_ID:', process.env.GOOGLE_CLIENT_ID ? 'Set' : 'Not set');
+  console.log('Expected redirect URI:', process.env.NEXTAUTH_URL ? `${process.env.NEXTAUTH_URL}/api/auth/callback/google` : 'NEXTAUTH_URL not set');
+}
+
 export const { handlers, auth, signIn, signOut } = NextAuth({
   providers: [
     Google({
