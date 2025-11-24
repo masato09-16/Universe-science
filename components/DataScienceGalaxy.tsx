@@ -453,13 +453,15 @@ export default function DataScienceGalaxy({
           }
         }}
         cooldownTicks={0}
-        d3Force={(d3: any) => {
-          // Disable all forces to keep nodes static
-          d3.force('link', null);
-          d3.force('charge', null);
-          d3.force('center', null);
-          d3.force('collision', null);
-        }}
+        {...({
+          d3Force: (d3: any) => {
+            // Disable all forces to keep nodes static
+            d3.force('link', null);
+            d3.force('charge', null);
+            d3.force('center', null);
+            d3.force('collision', null);
+          }
+        } as any)}
         onEngineStop={() => {
           if (graphRef.current) {
             if (selectedNodeId) {
