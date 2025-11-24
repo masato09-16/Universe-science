@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import SessionProvider from '@/components/SessionProvider';
 
 export const metadata: Metadata = {
   title: 'Data Science Galaxy',
@@ -13,7 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body>{children}</body>
+      <body>
+        <SessionProvider>{children}</SessionProvider>
+      </body>
     </html>
   );
 }

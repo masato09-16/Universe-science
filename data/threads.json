@@ -1,0 +1,52 @@
+[
+  {
+    "id": "thread-1763885886833-33x736zl2",
+    "title": "あああ",
+    "author": "後藤将斗",
+    "authorId": "09b35ae7-49a3-4672-acf2-f4d5abd40c6d",
+    "createdAt": "2025-11-23T08:18:06.833Z",
+    "updatedAt": "2025-11-23T08:18:32.773Z",
+    "postCount": 2,
+    "posts": [
+      {
+        "id": "post-1763885886833-08zzev4es",
+        "author": "後藤将斗",
+        "authorId": "09b35ae7-49a3-4672-acf2-f4d5abd40c6d",
+        "content": "あああ",
+        "createdAt": "2025-11-23T08:18:06.833Z",
+        "threadId": "thread-1763885886833-33x736zl2"
+      },
+      {
+        "id": "post-1763885912773-odakb6fhl",
+        "author": "後藤将斗",
+        "authorId": "09b35ae7-49a3-4672-acf2-f4d5abd40c6d",
+        "content": "いいい\n",
+        "createdAt": "2025-11-23T08:18:32.773Z",
+        "threadId": "thread-1763885886833-33x736zl2"
+      }
+    ]
+  },
+  {
+    "id": "thread-1763886022097-649bju5fd",
+    "title": "ｍｍｍ",
+    "author": "後藤将斗",
+    "authorId": "09b35ae7-49a3-4672-acf2-f4d5abd40c6d",
+    "createdAt": "2025-11-23T08:20:22.097Z",
+    "updatedAt": "2025-11-23T08:20:22.097Z",
+    "postCount": 1,
+    "posts": [
+      {
+        "id": "post-1763886022097-gsrt09gwr",
+        "author": "後藤将斗",
+        "authorId": "09b35ae7-49a3-4672-acf2-f4d5abd40c6d",
+        "content": "ｍｍｍ",
+        "createdAt": "2025-11-23T08:20:22.097Z",
+        "threadId": "thread-1763886022097-649bju5fd"
+      }
+    ],
+    "likedBy": [
+      "09b35ae7-49a3-4672-acf2-f4d5abd40c6d"
+    ],
+    "likes": 1
+  }
+]

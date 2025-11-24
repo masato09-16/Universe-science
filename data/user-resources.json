@@ -1,0 +1,50 @@
+{
+  "descriptive-stats": [
+    {
+      "title": "【統計学入門】記述統計とは？データの特徴をつかむ3ステップ ...",
+      "url": "https://note.com/suds_cur/n/nd12d0e1e0299",
+      "type": "article",
+      "summary": "記述統計は、データの特徴を簡潔に要約するための手法です。代表値や散布度、グラフ化を用いてデータの中心やばらつきを把握し、視覚的に理解できます。初心者でも実践できる3つのステップを通じて、データ分析の基本を学ぶことができます。",
+      "rating": 4,
+      "ratings": [
+        {
+          "userId": "09b35ae7-49a3-4672-acf2-f4d5abd40c6d",
+          "userName": "後藤将斗",
+          "rating": 4,
+          "ratedAt": "2025-11-21T05:36:19.394Z"
+        }
+      ]
+    },
+    {
+      "title": "記述統計学と推測統計学の違いを初心者向けに解説",
+      "url": "https://datascience-lab.sakura.ne.jp/kizyutsutoukei-suisokutoukei/",
+      "type": "article",
+      "summary": "記述統計学は、データの特徴をわかりやすく表現する手法です。具体的には、図や表を使ってデータを整理し、平均値などを示します。収集可能なデータに基づいて、全体の傾向を理解するための基礎を提供します。",
+      "rating": 5,
+      "ratings": [
+        {
+          "userId": "09b35ae7-49a3-4672-acf2-f4d5abd40c6d",
+          "userName": "後藤将斗",
+          "rating": 4,
+          "ratedAt": "2025-11-21T05:36:21.690Z"
+        }
+      ]
+    },
+    {
+      "title": "記述統計学と推計統計学",
+      "url": "https://avilen.co.jp/personal/knowledge-article/inductive-statistics/",
+      "type": "article",
+      "summary": "記述統計学は、データの特徴を分かりやすく表現する手法です。例えば、テストの平均点を算出してクラス間を比較することができます。しかし、記述統計学は実際のデータがないと分析できないため、推計統計学が必要になります。",
+      "rating": 5,
+      "userAdded": false,
+      "ratings": [
+        {
+          "userId": "09b35ae7-49a3-4672-acf2-f4d5abd40c6d",
+          "userName": "後藤将斗",
+          "rating": 5,
+          "ratedAt": "2025-11-21T05:36:24.524Z"
+        }
+      ]
+    }
+  ]
+}
