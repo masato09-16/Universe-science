@@ -376,19 +376,34 @@ export default function DataScienceGalaxy({
         }}
         nodeColor={(node: any) => {
           const nodeData = nodeMap.current.get(node.id);
-          if (!nodeData) return '#00ffff';
-          if (node.id === selectedNodeId) {
-            return '#ffffff'; // Selected node in white
+          if (!nodeData) {
+            const opacity = 1;
+            return `rgba(0, 255, 255, ${opacity})`;
           }
-          return getNodeColor(nodeData);
+          const opacity = getNodeOpacity(nodeData, globalScale);
+          let color = getNodeColor(nodeData);
+          if (node.id === selectedNodeId) {
+            color = '#ffffff'; // Selected node in white
+          }
+          // Convert hex color to rgba with opacity
+          if (color.startsWith('#')) {
+            const r = parseInt(color.slice(1, 3), 16);
+            const g = parseInt(color.slice(3, 5), 16);
+            const b = parseInt(color.slice(5, 7), 16);
+            return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+          }
+          // If already rgba, extract rgb and apply opacity
+          if (color.startsWith('rgba')) {
+            const rgbMatch = color.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+            if (rgbMatch) {
+              return `rgba(${rgbMatch[1]}, ${rgbMatch[2]}, ${rgbMatch[3]}, ${opacity})`;
+            }
+          }
+          return color;
         }}
         nodeVal={(node: any) => {
           const nodeData = nodeMap.current.get(node.id);
           return nodeData ? getNodeSize(nodeData) : 6;
-        }}
-        nodeOpacity={(node: any) => {
-          const nodeData = nodeMap.current.get(node.id);
-          return nodeData ? getNodeOpacity(nodeData, globalScale) : 1;
         }}
         linkColor={(link: any) => {
           const sourceId = typeof link.source === 'string' ? link.source : (link.source as any).id;
