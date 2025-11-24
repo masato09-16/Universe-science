@@ -78,6 +78,9 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   secret: process.env.NEXTAUTH_SECRET!,
   trustHost: true, // Vercelなどのホスティング環境で自動的にURLを検出
   debug: process.env.NODE_ENV === 'development',
+  session: {
+    strategy: "jwt",
+  },
 });
 
 export const { GET, POST } = handlers;
