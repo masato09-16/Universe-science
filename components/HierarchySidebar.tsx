@@ -38,8 +38,8 @@ export default function HierarchySidebar({
     // Build parent-child relationships from links
     const childrenMap = new Map<string, string[]>();
     links.forEach((link) => {
-      const source = typeof link.source === 'string' ? link.source : link.source.id;
-      const target = typeof link.target === 'string' ? link.target : link.target.id;
+      const source = typeof link.source === 'string' ? link.source : (link.source as any).id;
+      const target = typeof link.target === 'string' ? link.target : (link.target as any).id;
       
       const sourceNode = nodes.find(n => n.id === source);
       const targetNode = nodes.find(n => n.id === target);
