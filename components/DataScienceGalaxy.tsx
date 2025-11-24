@@ -172,8 +172,8 @@ export default function DataScienceGalaxy({
       // Convert links to use node objects instead of IDs
       const filteredLinks: any[] = [];
       links.forEach(link => {
-        const sourceId = typeof link.source === 'string' ? link.source : link.source.id;
-        const targetId = typeof link.target === 'string' ? link.target : link.target.id;
+        const sourceId = typeof link.source === 'string' ? link.source : (link.source as any).id;
+        const targetId = typeof link.target === 'string' ? link.target : (link.target as any).id;
         
         // Check if both nodes are in nodesWithoutTier1 (exclude Tier 1)
         const sourceNode = nodesWithoutTier1.find(n => n.id === sourceId);
@@ -193,8 +193,8 @@ export default function DataScienceGalaxy({
       // Convert links to use node objects instead of IDs
       const filteredLinks: any[] = [];
       links.forEach(link => {
-        const sourceId = typeof link.source === 'string' ? link.source : link.source.id;
-        const targetId = typeof link.target === 'string' ? link.target : link.target.id;
+        const sourceId = typeof link.source === 'string' ? link.source : (link.source as any).id;
+        const targetId = typeof link.target === 'string' ? link.target : (link.target as any).id;
         
         // Check if both nodes are in nodesWithoutTier1 (exclude Tier 1)
         const sourceNode = nodesWithoutTier1.find(n => n.id === sourceId);
@@ -216,8 +216,8 @@ export default function DataScienceGalaxy({
       
       // Get all Tier 2 nodes connected to this Tier 1
       links.forEach(link => {
-        const source = typeof link.source === 'string' ? link.source : link.source.id;
-        const target = typeof link.target === 'string' ? link.target : link.target.id;
+        const source = typeof link.source === 'string' ? link.source : (link.source as any).id;
+        const target = typeof link.target === 'string' ? link.target : (link.target as any).id;
         
         if (source === selectedNodeId) {
           connectedNodeIds.add(target);
@@ -226,8 +226,8 @@ export default function DataScienceGalaxy({
 
       // Get all Tier 3 nodes connected to those Tier 2 nodes
       links.forEach(link => {
-        const source = typeof link.source === 'string' ? link.source : link.source.id;
-        const target = typeof link.target === 'string' ? link.target : link.target.id;
+        const source = typeof link.source === 'string' ? link.source : (link.source as any).id;
+        const target = typeof link.target === 'string' ? link.target : (link.target as any).id;
         
         if (connectedNodeIds.has(source)) {
           connectedNodeIds.add(target);
@@ -242,8 +242,8 @@ export default function DataScienceGalaxy({
       // Only include links where both source and target are in filteredNodes (no Tier 1)
       const filteredLinks: any[] = [];
       links.forEach(link => {
-        const sourceId = typeof link.source === 'string' ? link.source : link.source.id;
-        const targetId = typeof link.target === 'string' ? link.target : link.target.id;
+        const sourceId = typeof link.source === 'string' ? link.source : (link.source as any).id;
+        const targetId = typeof link.target === 'string' ? link.target : (link.target as any).id;
         
         // Check if both nodes are in filteredNodes (exclude Tier 1)
         const sourceNode = filteredNodes.find(n => n.id === sourceId);
@@ -263,8 +263,8 @@ export default function DataScienceGalaxy({
     const tier1ParentId = (() => {
       // Find the Tier 1 parent of the selected node
       for (const link of links) {
-        const source = typeof link.source === 'string' ? link.source : link.source.id;
-        const target = typeof link.target === 'string' ? link.target : link.target.id;
+        const source = typeof link.source === 'string' ? link.source : (link.source as any).id;
+        const target = typeof link.target === 'string' ? link.target : (link.target as any).id;
         const sourceNode = nodeMap.current.get(source);
         
         if (sourceNode && sourceNode.tier === 1 && target === selectedNodeId) {
@@ -280,8 +280,8 @@ export default function DataScienceGalaxy({
       
       // Get all Tier 2 nodes connected to the Tier 1 parent
       links.forEach(link => {
-        const source = typeof link.source === 'string' ? link.source : link.source.id;
-        const target = typeof link.target === 'string' ? link.target : link.target.id;
+        const source = typeof link.source === 'string' ? link.source : (link.source as any).id;
+        const target = typeof link.target === 'string' ? link.target : (link.target as any).id;
         
         if (source === tier1ParentId) {
           connectedNodeIds.add(target);
@@ -290,8 +290,8 @@ export default function DataScienceGalaxy({
 
       // Get all Tier 3 nodes connected to those Tier 2 nodes
       links.forEach(link => {
-        const source = typeof link.source === 'string' ? link.source : link.source.id;
-        const target = typeof link.target === 'string' ? link.target : link.target.id;
+        const source = typeof link.source === 'string' ? link.source : (link.source as any).id;
+        const target = typeof link.target === 'string' ? link.target : (link.target as any).id;
         
         if (connectedNodeIds.has(source)) {
           connectedNodeIds.add(target);
@@ -306,8 +306,8 @@ export default function DataScienceGalaxy({
       // Only include links where both source and target are in filteredNodes (no Tier 1)
       const filteredLinks: any[] = [];
       links.forEach(link => {
-        const sourceId = typeof link.source === 'string' ? link.source : link.source.id;
-        const targetId = typeof link.target === 'string' ? link.target : link.target.id;
+        const sourceId = typeof link.source === 'string' ? link.source : (link.source as any).id;
+        const targetId = typeof link.target === 'string' ? link.target : (link.target as any).id;
         
         // Check if both nodes are in filteredNodes (exclude Tier 1)
         const sourceNode = filteredNodes.find(n => n.id === sourceId);
@@ -325,8 +325,8 @@ export default function DataScienceGalaxy({
     // Fallback: show selected node and its direct connections
     const connectedNodeIds = new Set<string>([selectedNodeId]);
     links.forEach(link => {
-      const source = typeof link.source === 'string' ? link.source : link.source.id;
-      const target = typeof link.target === 'string' ? link.target : link.target.id;
+      const source = typeof link.source === 'string' ? link.source : (link.source as any).id;
+      const target = typeof link.target === 'string' ? link.target : (link.target as any).id;
       
       if (source === selectedNodeId) {
         connectedNodeIds.add(target);
@@ -391,9 +391,9 @@ export default function DataScienceGalaxy({
           return nodeData ? getNodeOpacity(nodeData, globalScale) : 1;
         }}
         linkColor={(link: any) => {
-          const linkKey = `${link.source.id || link.source}-${link.target.id || link.target}`;
-          const sourceId = typeof link.source === 'string' ? link.source : link.source.id;
-          const targetId = typeof link.target === 'string' ? link.target : link.target.id;
+          const sourceId = typeof link.source === 'string' ? link.source : (link.source as any).id;
+          const targetId = typeof link.target === 'string' ? link.target : (link.target as any).id;
+          const linkKey = `${sourceId}-${targetId}`;
           const isConnectedToSelected = selectedNodeId && (sourceId === selectedNodeId || targetId === selectedNodeId);
           
           if (hoveredLink === linkKey) {
@@ -405,9 +405,9 @@ export default function DataScienceGalaxy({
           return 'rgba(255, 255, 255, 0.2)';
         }}
         linkWidth={(link: any) => {
-          const linkKey = `${link.source.id || link.source}-${link.target.id || link.target}`;
-          const sourceId = typeof link.source === 'string' ? link.source : link.source.id;
-          const targetId = typeof link.target === 'string' ? link.target : link.target.id;
+          const sourceId = typeof link.source === 'string' ? link.source : (link.source as any).id;
+          const targetId = typeof link.target === 'string' ? link.target : (link.target as any).id;
+          const linkKey = `${sourceId}-${targetId}`;
           const isConnectedToSelected = selectedNodeId && (sourceId === selectedNodeId || targetId === selectedNodeId);
           
           if (hoveredLink === linkKey) {
@@ -423,7 +423,9 @@ export default function DataScienceGalaxy({
         linkDirectionalParticleColor={() => 'rgba(0, 255, 255, 0.6)'}
         onLinkHover={(link: any) => {
           if (link) {
-            const linkKey = `${link.source.id || link.source}-${link.target.id || link.target}`;
+            const sourceId = typeof link.source === 'string' ? link.source : (link.source as any).id;
+            const targetId = typeof link.target === 'string' ? link.target : (link.target as any).id;
+            const linkKey = `${sourceId}-${targetId}`;
             setHoveredLink(linkKey);
           } else {
             setHoveredLink(null);
