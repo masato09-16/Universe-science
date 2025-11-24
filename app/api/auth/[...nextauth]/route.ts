@@ -41,6 +41,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     signIn: '/auth/signin',
   },
   secret: process.env.NEXTAUTH_SECRET || 'fallback-secret-key-change-in-production',
+  trustHost: true, // Vercelなどのホスティング環境で自動的にURLを検出
   debug: process.env.NODE_ENV === 'development',
 });
 
